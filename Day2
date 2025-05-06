@@ -1,0 +1,243 @@
+DAY 2 -- static block method and constructor 
+
+static block ===
+
+class Demo {
+    static {
+        System.out.println("Static Block");
+    }
+    Demo() {
+        System.out.println("Constructor");
+    }
+}
+public class q2 {
+    public static void main(String[] args){
+        Demo d1 = new Demo();
+        Demo d2 = new Demo();
+    }
+}
+//---using static keyword static block will be created and it is a singleton block
+//---Static method : for static method no need to create objects , static will act as instance or object and using class name , you can call static methods
+
+\\\--------------------------------------------------------------------------------------------------------------------------------------------------------------------\\\
+
+class Animal {
+    static void eat(){
+        System.out.println("ANimal is eating");
+    }
+}
+
+class Dog extends Animal {
+    static void eat(){
+        System.out.println("Dog is eating");
+    }
+}
+
+public class Main { 
+    public static void main(String[] args){
+        Animal.eat();
+        Dog.eat();
+    }
+}
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------\\\
+CONSTRUCTOR : initialization of objects , calling default constructors to create objects 
+
+CONDITIONAL STATEMENTS : 
+it will take the condition and it will bring that block 
+types : if , else , else-if , SWITCH case 
+
+if (age < 18){
+    System.out.println();
+}
+else{
+
+}
+
+condoitional statements are used to get output in constant time 
+
+recursion : 
+public class HCFRecursion {
+    // Recursive function to find HCF
+    static int findHCF(int a, int b) {
+        if (b == 0)
+            return a;
+        else
+            return findHCF(b, a % b);
+    }
+
+    public static void main(String[] args) {
+        int num1 = 18, num2 = 12;
+        int hcf = findHCF(num1, num2);
+        System.out.println("HCF of " + num1 + " and " + num2 + " is: " + hcf);
+    }
+}
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+EXAMPLE FOR SWITCH CASE :
+
+public class SwitchExample {
+    public static void main(String[] args) {
+        int dayOfWeek = 3;
+        String dayName;
+        
+        switch (dayOfWeek) {
+            case 1:
+                dayName = "Monday";
+                break;
+            case 2:
+                dayName = "Tuesday";
+                break;
+            case 3:
+                dayName = "Wednesday";
+                break;
+            case 4:
+                dayName = "Thursday";
+                break;
+            case 5:
+                dayName = "Friday";
+                break;
+            case 6:
+                dayName = "Saturday";
+                break;
+            case 7:
+                dayName = "Sunday";
+                break;
+            default:
+                dayName = "Invalid day";
+                break;
+        }
+        
+        System.out.println("Day " + dayOfWeek + " is " + dayName);
+    }
+}
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Control Statements :- for , while , do while .
+
+Entry controller and exit controller 
+
+entry control : for and while 
+
+exit control : do 
+
+
+for (Start ; End ; diff ){
+}
+
+   |
+   |
+
+start 
+while (End){
+diff
+}
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+nth table 
+
+import java.util.*;
+public class Main{
+    public static void main(String[]agrs){
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter the n :");
+        int n = sc.nextInt();
+        
+        System.out.print("Muitiplication of " + n + "is");
+        
+        for (int i=1;i<=10;i++){
+            System.out.println(n +"*" + i + "=" + (n*i) );
+            
+        }
+        
+       
+    }
+    
+}
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Fabonocci:-
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        
+        System.out.print("Enter the Number : ");
+        int n = sc.nextInt();
+        
+        int a = 0;
+        int b = 1;
+        
+        for (int i = 1 ; i <= n; i++ ){
+            
+            
+            int nextnum = a + b;
+            a = b ;
+            b = nextnum;
+            
+            System.out.print(a);
+        } 
+        
+    } 
+    
+}
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Factorial --
+import java.util.Scanner;
+
+public class FactorialLoop {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Input number
+        System.out.print("Enter a number: ");
+        int num = scanner.nextInt();
+
+        long factorial = 1;
+
+        for (int i = 1; i <= num; i++) {
+            factorial *= i; // factorial = factorial * i
+        }
+
+        System.out.println("Factorial of " + num + " is: " + factorial);
+        scanner.close();
+    }
+}
+
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+class Animal {
+    void eat(){
+        System.out.println("ANimal is eating");
+    }
+}
+
+class Dog extends Animal {
+    @Override
+    void eat(){
+        System.out.println("Dog is eating");
+    }
+}
+
+public class Main { 
+    public static void main(String[] args){
+        Animal animal = new Dog();
+        animal.eat();
+        
+    }
+}
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+*****
+ *
+  *  
+   *  
+*****
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
