@@ -1,0 +1,147 @@
+Java DSA day  4 
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Switch case :-
+- cases have to be the same type as expressions , must be a constant or litera
+- Dulicate case values are not allowed 
+- If braek is use to terminate the sequence
+-  default will execute when none of the above does 
+-  if default is not at the end , put break after 
+
+without Switch case :- 
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		System.out.print("Enter the Number : ");
+		int n =  sc.nextInt();
+		
+		if (n==1){
+		    System.out.print("Monday");
+		}
+		else if (n==2){
+		    System.out.print("Tuesday");
+		}
+		else if (n==7){
+		    System.out.print("Sunday");
+		}
+		else {
+		    System.out.print("Enter valid number ");
+		}
+	}
+}
+
+With switch case :-
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		System.out.print("Enter the Number : ");
+		int n =  sc.nextInt();
+		
+		switch(n){
+		    case 1:
+		        System.out.print("Monday");
+		        break ;
+		    case 2:
+		        System.out.print("Tuesday");
+		        break ;
+		    case 3:
+		        System.out.print("Wednesday");
+		        break ;
+		    case 4:
+		        System.out.print("thrusday");
+		        break ;
+		    case 5:
+		        System.out.print("friday");
+		        break ;
+		    case 6:
+		        System.out.print("saturday");
+		        break ;   
+		  case 7:
+		        System.out.print("sunday");
+		        break ;     
+		  default :
+		  
+		        System.out.print("Enter valid num ");
+		        break ;
+		}
+	}
+}
+
+Enhanced switch case :- 
+import java.util.Scanner;
+class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int choice = sc.nextInt();
+        
+        switch(choice){
+               case 1 -> System.out.print("Monday");
+               case 2 -> System.out.print("tuesday");
+               case 3 -> System.out.print("wednesday");
+               case 4 -> System.out.print("thursday");
+               
+        }
+    }
+}
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Addition of the numbers , but the output should be in single digit :-
+ Example -- input is 123 than output should be 6 . 
+
+code :-
+import java.util.*;
+public class Main{
+    public static void main(String []args){
+        Scanner sc = new Scanner(System.in);
+           System.out.print("Enter the Numder : "); 
+        
+            int n = sc.nextInt();
+           
+            while (n>9){
+            int sum =  0;    
+           
+            while(n!=0){
+                int rem = n % 10;
+                sum = sum + rem ;
+                n = n/10;
+                
+            }
+            n = sum;
+            }
+        System.out.print(n);
+        
+    }
+}
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+Reverse Right Angeled Triangle 
+
+import java.util.Scanner;
+
+public class ReverseRightTriangle {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter number of rows: ");
+        int n = sc.nextInt();
+
+        for (int i = n; i >= 1; i--) {
+            for (int j = 1; j <= i; j++) {
+                System.out.print("* ");
+            }
+            System.out.println();
+        }
+
+        sc.close();
+    }
+}
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+ 
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
