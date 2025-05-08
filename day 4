@@ -180,7 +180,205 @@ mostly we use for each loop in collections .
 example:- List set and Map .
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------
+ piramid pattern using for each :-
+
+public class Main {
+    public static void main(String[] args) {
+        int[] rows = {1, 2, 3, 4, 5}; 
+
+        for (int level : rows) {
+            
+            for (int i = 0; i < rows.length - level; i++) {
+                System.out.print(" ");
+            }
+
+            
+            for (int j = 0; j < 2 * level - 1; j++) {
+                System.out.print("*");
+            }
+
+            System.out.println();
+        }
+    }
+}
+
+
+Diamond pattern :- 
+public class DiamondPattern {
+    public static void main(String[] args) {
+        int n = 5; // number of rows in top half
+
+        // Top half
+        for (int i = 1; i <= n; i++) {
+            // Print spaces
+            for (int j = 1; j <= n - i; j++) {
+                System.out.print(" ");
+            }
+            // Print stars
+            for (int k = 1; k <= 2 * i - 1; k++) {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+
+        // Bottom half
+        for (int i = n - 1; i >= 1; i--) {
+            // Print spaces
+            for (int j = 1; j <= n - i; j++) {
+                System.out.print(" ");
+            }
+            // Print stars
+            for (int k = 1; k <= 2 * i - 1; k++) {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+    }
+}
+
+
+Hollow piramid pattern
+
+code :-
+
+public class Main {
+    public static void main(String[] args) {
+        int n = 5; 
+        for (int i = 1; i <= n; i++) {
+            
+            for (int j = 1; j <= n - i; j++) {
+                System.out.print(" ");
+            }
+
+            
+            for (int j = 1; j <= 2 * i - 1; j++) {
+                if (j == 1 || j == 2 * i - 1) {
+                    System.out.print("*");
+                } else {
+                    System.out.print(" ");
+                }
+            }
+
+            System.out.println();
+        }
+
+        
+        for (int i = n - 1; i >= 1; i--) {
+            
+            for (int j = 1; j <= n - i; j++) {
+                System.out.print(" ");
+            }
+
+            
+            for (int j = 1; j <= 2 * i - 1; j++) {
+                if (j == 1 || j == 2 * i - 1) {
+                    System.out.print("*");
+                } else {
+                    System.out.print(" ");
+                }
+            }
+
+            System.out.println();
+        }
+    }
+}
  
+pattern :-
+
+public class Main {
+    public static void main(String[] args) {
+       
+        for (int i = 5; i >= 1; i--) {
+            for (int j = 1; j <= 5 - i; j++) {
+                System.out.print(" ");
+            }
+            for (int k = 1; k <= 2 * i - 1; k++) {
+                if (k == 1 || k == 2 * i - 1 || i == 5) {
+                    System.out.print("*");
+                } else {
+                    System.out.print(" ");
+                }
+            }
+            System.out.println();
+        }
+
+      
+        for (int i = 2; i <= 5; i++) { 
+            for (int j = 1; j <= 5 - i; j++) {
+                System.out.print(" ");
+            }
+            for (int k = 1; k <= 2 * i - 1; k++) {
+                if (k == 1 || k == 2 * i - 1 || i == 5) {
+                    System.out.print("*");
+                } else {
+                    System.out.print(" ");
+                }
+            }
+            System.out.println();
+        }
+    }
+}
+
+Butterfly pattern :-
+public class Main {
+    public static void main(String[] args) {
+        int n = 5; 
+
+        
+        for (int i = 1; i <= n; i++) {
+           
+            for (int j = 1; j <= i; j++) {
+                System.out.print("*");
+            }
+        
+            for (int j = 1; j <= 2 * (n - i); j++) {
+                System.out.print(" ");
+            }
+            
+            for (int j = 1; j <= i; j++) {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+
+        for (int i = n; i >= 1; i--) {
+          
+            for (int j = 1; j <= i; j++) {
+                System.out.print("*");
+            }
+            
+            for (int j = 1; j <= 2 * (n - i); j++) {
+                System.out.print(" ");
+            }
+            
+            for (int j = 1; j <= i; j++) {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+    }
+}
+ mango treesss :-
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        int rows = sc.nextInt();
+        int cols = sc.nextInt();
+        if (cols <= rows || cols% rows == 1 || cols%rows== 0)
+
+ {
+            System.out.println("Yes");
+        } else {
+            System.out.println("No");
+        }
+
+        sc.close();
+    }
+}
+
 
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
