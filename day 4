@@ -141,6 +141,45 @@ public class ReverseRightTriangle {
 }
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+Terinary operators :-
+
+(Condition ) ?  statement1 : statement2 ; --> Syntax 
+
+String res = (n== 5) ? "Yes" : "No";
+
+System.out.println(res);
+
+print hallosquare using terinary operator :-
+code :-
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter size of square: ");
+        int n = sc.nextInt();  
+
+        for (int i = 1; i <= n; i++) {
+            for (int j = 1; j <= n; j++) {
+                
+                System.out.print((i == 1 || i == n || j == 1 || j == n) ? "*" : " ");
+            }
+            System.out.println();
+        }
+
+        sc.close();
+    }
+}
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+Enhanced for loop :-
+for each :-
+wherever we don't have length and whenever don't know index values then we need to use for each loops .
+mostly we use for each loop in collections .
+example:- List set and Map .
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
  
 
 
