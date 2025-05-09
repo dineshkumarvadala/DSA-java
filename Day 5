@@ -1,0 +1,268 @@
+Day 5 :- 
+Arrays - 
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+All the differnce names will be stored in stack memory and all the values which where assiigned to whose  variables will be stored heap memory.
+Here all the blocks having same datatype , if the all the block having same datatype , simply we create an array to store all those values.
+
+Definition:-
+Collection of similar type of data in a continous allocation.
+if variable a stored at address 100 than the second value of the array should be allocated at 104, third value is stored at 108.
+
+Syntax:-
+datatype[]arrayname;
+
+class Main {
+    public static void main(String[] args) {
+        int[] arr ={1,2,3,4,5};
+    }
+}
+
+declaration and installization happened at same time ..
+
+class Main {
+    public static void main(String[] args) {
+        int[] arr ={1,2,3,4,5};
+        int[] arr;
+        arr = {1,2,3,4,5};
+    }
+}
+
+now , declaration happene at first line and installization happend at second line .11
+if we want get the data previously restore all the datavalues in individual variables, if we want to get the data , we can simply print the variables and in array , we have to print the data using index value .
+
+Index values by default it will start with zero .
+
+code :-
+class Main {
+    public static void main(String[] args) {
+        int[] arr ={1,2,3,4,5};
+        for (int i =0;i<arr.length;i++){
+      System.out.print(arr[i]);
+            
+        }
+    }
+}
+
+To get the length of string  we have to use arr.length , str.length().
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Type of output formates:-
+1.We can use simply for loop to get the output.
+2.Using for  each loop .
+3.Arrays.toString(arr)
+
+ToString is an inbluid method to print array values
+IN=nternally toString contains for loop and it will print along with open and closed [] square brackets followed by comas. 
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Camel case and Snake case :-
+Ex:- for snke case and camel case. 
+int odd_count;=snake case .
+int oddCount;= camel case .
+
+java strictly follows camel case .
+
+
+Q:-IN a given array count odd and even number.
+
+
+import java.util.*;
+class Main {
+    public static void main(String[] args) {
+        int[] arr ={1,2,3,4,5};
+         int oddCount =0;
+         int evenCount= 0;
+         for (int num = 1;num<=arr.length ;num++) {
+            if (num % 2 == 0)
+                evenCount++;
+            else
+                oddCount++;
+        }
+
+        System.out.println("Odd numbers: " + oddCount);
+        System.out.println("Even numbers: " + evenCount);
+    }
+}
+
+
+print highest value in an anrray :-
+
+public class MaxInArray {
+    public static void main(String[] args) {
+        int arr[] ={14,1,3,4,5,6,12};
+        int max = arr[0];
+        for (int i = 0; i < arr.length;i++){
+            if (arr[i] >max){
+                max = arr[i];
+            }
+        }
+        System.out.println("Maximum value in the array: " + max);
+    }
+}
+
+
+
+Print second highest value :-
+public class SecondHighest {
+    public static void main(String[] args) {
+        int[] arr = {5, 12, 3, 21, 12,7};
+
+        
+        int highest = Integer.MIN_VALUE;
+        int secondHighest = Integer.MIN_VALUE;
+
+        for (int num : arr) {
+            if (num > highest) {
+                secondHighest = highest;
+                highest = num;
+            } else if (num > secondHighest && num != highest) {
+                secondHighest = num;
+            }
+        }
+
+        if (secondHighest == Integer.MIN_VALUE) {
+            System.out.println("No second highest number found.");
+        } else {
+            System.out.println("Second highest number: " + secondHighest);
+        }
+    }
+}
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Declare and Installizating the array with size :-
+
+int[] arr = new int[5];
+once you created an array along with size , it can't be modified , the size will be fixed. 
+and  int arr[]  will be created in tack memory and we call it as a refernce and new keyword helps to create object space for the array .
+if the array type is integer by default all values will be zero. and if array type is string  all the default values will be null.
+
+
+print max value inputs from user :-
+
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+
+        int arr[] = new int[5];
+
+        System.out.print("Enter the array element: ");
+        arr[0] = in.nextInt(); 
+        int max = arr[0];      
+
+        for (int i = 1; i < arr.length; i++) {
+            System.out.print("Enter the array element: ");
+            arr[i] = in.nextInt();
+            if (arr[i] > max) {
+                max = arr[i];
+            }
+        }
+
+        System.out.println("Maximum value: " + max);
+    }
+}
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- 
+premitive data type are not splicted or divided
+  ex: -int ,f, char
+  non pre data types can be splicted or divided
+  ex :-strings,
+  string can be divided into char so we cant diviedm them
+  and all user difiend objects
+class Node 
+{
+int data;
+Node next;
+}
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+==Check wheather the given array is sorted or not 
+
+public class Main {
+    public static void main(String[] args) {
+        int[] arr = {1, 3, 10, 7, 9};  
+
+        boolean isSorted = true;
+
+        for (int i = 0; i < arr.length - 1; i++) {
+            if (arr[i] > arr[i + 1]) {
+                isSorted = false;
+                break;
+            }
+        }
+
+        if (isSorted) {
+            System.out.println("The array is sorted in ascending order.");
+        } else {
+            System.out.println("The array is NOT sorted.");
+        }
+    }
+}
+
+
+==Check wheather the element is there are not .
+
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+
+        int[] arr = {10, 20, 30, 40, 50};  
+
+        System.out.print("Enter the number to search: ");
+        int target = in.nextInt();         
+
+        boolean found = false;
+
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] == target) {
+                found = true;
+                break;                     
+            }
+        }
+
+        if (found) {
+            System.out.println("Element " + target + " is present in the array.");
+        } else {
+            System.out.println("Element " + target + " is NOT present in the array.");
+        }
+    }
+}
+
+
+
+==[1,0,1,0,1,0] move all zeros to right side [1,1,1,0,0,0].
+
+public class Main {
+    public static void main(String[] args) {
+        int[] arr = {1, 0, 1, 0, 1, 0};
+
+        int index = 0; // Index to place next non-zero element
+
+       
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] != 0) {
+                arr[index++] = arr[i];
+            }
+        }
+
+        
+        while (index < arr.length) {
+            arr[index++] = 0;
+        }
+
+       
+        System.out.print("Array after moving zeros to the end: ");
+        for (int num : arr) {
+            System.out.print(num + " ");
+        }
+    }
+}
+
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
