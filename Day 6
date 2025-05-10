@@ -1,0 +1,92 @@
+2 D array :-
+2 D array consists columns ,
+int [] [] arr = new int[3][2] 
+the first sr bracket represents rows and second bracket represents columns
+while declaring the array we have to give number of rows and  mentioned no. of columns is optional .
+
+Print the 2 d array , user input :-
+import java.util.*;
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+    
+        System.out.print("Enter number of rows: ");
+        int rows = scanner.nextInt();
+        System.out.print("Enter number of columns: ");
+        int cols = scanner.nextInt();
+
+        int[][] array = new int[rows][cols];
+
+      
+        System.out.println("Enter the elements row by row:");
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < cols; j++) {
+                System.out.print("Element at (" + i + "," + j + "): ");
+                array[i][j] = scanner.nextInt();
+            }
+        }
+
+      
+        System.out.println("\nThe 2D array is:");
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < cols; j++) {
+                System.out.print(array[i][j] + " ");
+            }
+            System.out.println(); 
+        }
+
+        
+    }
+}
+
+
+printing zigzag pattern :-
+
+
+public class Main {
+    public static void main(String[] args) {
+        int[][] arr = {
+            {1, 2, 3},
+            {4, 5, 6},
+            {7, 8, 9}
+        };
+
+        int n = arr.length;
+        int sum = 0;
+
+        System.out.print("Z shape elements: ");
+        for (int i = 0; i < n; i++) {
+            if (i == 0 || i == n - 1) {
+              
+                for (int j = 0; j < n; j++) {
+                    System.out.print(arr[i][j] + " ");
+                    sum += arr[i][j];
+                }
+            } else {
+                
+                int j = n - i - 1;
+                System.out.print(arr[i][j] + " ");
+                sum += arr[i][j];
+            }
+        }
+
+        System.out.println("\nSum of Z shape elements: " + sum);
+    }
+}
+
+
+
+
+Columns are dyanmic 
+small example :-
+int [][] arr = {
+{1,2,3},
+{4,5},
+{6,7,8,9}
+};
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
