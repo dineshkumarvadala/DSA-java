@@ -1,0 +1,77 @@
+Problem Solving :-
+
+stacks 
+last in first out(LIFO)
+Push() - add elements in the stack
+pop() - removing the last element
+peek() - print the top most element 
+
+
+Next Greater Element (more over in stack) :- 
+|  1  |
+|  4  |
+|  3  |
+|__2__|
+
+
+Array having fixed size , we can't increase the size as well we can't decrease , if array size is 5 maximum image store 5 elements we want store 6th element we have to create one more array with 
+the extra space , but we can't increase the size.
+But in array list the size will be dynamic , you can increase the size aswellas decrease .
+
+class Main{
+    public static void main(String []args){
+        List<Wraper class of list type > ArrayListName = new ArrayList <> ();
+        List<Integer>arr = new ArrayList<>();
+    }
+}
+
+- List is an interface and angular brackets are henric array.
+- Array list is belongs to collection frameworks and we have to use wraper class  in  collections, followed array list name, array which your mentioned in syntax in class
+- Interface contains incomplete methods and class contains complete method .
+- As array list is a class we have to import array list class .
+
+Code:-
+import java.util.*;
+class Main{
+    public static void main(String []args){
+        List<Integer> Leaders = new ArrayList <> ();
+       
+        int[]arr = {5,6,2,8,2,6};
+        int max =  Integer.MIN_VALUE;
+        for (int i = arr.length- 1; i >=0 ; i--){
+            if (arr[i] > max){
+                Leaders.add(arr[i]);
+                max = arr[i];
+            }
+        }
+        Collections.reverse(Leaders);
+        System.out.print(Leaders);
+    }
+}
+
+
+In Array list , if the array got instailize size 2 , if we are trying to add 3rd element the size of the list we be doubled and if size of array  is four if we are trying add 4 ,
+Again size doubled 8 and vise versa is 8. And if we remove  4 element out of 8 and if we try to remove 5th element th array will be Half.
+arr[4] = 1,2,3,4 5th element added 
+size will be arr[8]
+arr[8] = 1,2,3,4,5,6,7,8
+arr[4].
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Greddy Algorithm:-
+
+Custom sorting:-
+If it sorting we have only two possiblities either ascending or desending , when it comes to custom sortin we can sort the value s according to our format.
+
+Ascending order - 19,26,37.
+Desencing order - 37,26,19. 
+
+Custom sorting - 26,37,19 (unit wise) .
+
+- From given arrays make pairs  
+- sort the array based on nth type.
+
+After for sure we will take first meeting , compare nth time to starting time of next pair , if staring time strictly greater , consider the meeting .
+
+
