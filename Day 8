@@ -1,0 +1,26 @@
+Day -8 
+Recursion .
+ Recursion are nothing but Recursion are nothing but Function calling itself and itself till it meets base conditions
+-Function calling it self and it self and another function calling itself and itself
+
+In java we don't have pointer so we use reference , so java strictly  pass by value .
+If we didn't mention base case properly will get an exception called stack or flow .
+
+Recursion are used to break the code into small .
+
+Write the code for factorial using recursions ?
+
+Draw the tree 5! * 4! .
+
+After the writing the recursive tree , all the writtened values will be pushed in stack ,Whenever we hits base condition the elements will be poped .
+PSUEDO Code:-
+
+fact(n) {
+if (n==0){
+return 1;
+}
+else {
+return n * fact (n-1);
+}
+}
+
