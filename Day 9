@@ -1,1 +1,48 @@
+Day 9:-
+STRINGS:-
+
+Collection of characters is called Strings.
+int [] arr = {1,2,3,4,5,6}  
+All the lements are similar that is why we created an array to store all those similar arrays and to get array values  using index values ,
+similarly to store mutiple characters to created a string .
+Whwn you craeted a string , reference will be store in stacvk memory , object will be in created in string pool.once a object created in string pool it will be created with some fixed size ,
+so we can't remove and we can't add we can't modify the string , that is why string s are immuttable.
+
+"Hello"   " " --> 
+"ello"    "H" -->
+"llo"     "H" -->
+"lo"      "HL" -->
+"o"       "HLL" -->
+" "       "HLLO" -->
+whenever input string becomes empty we have to stop the recursion.
+
+Character's and substring :- 
+class Main {
+    static void skip(String ip){
+        if (ip.isEmpty()){
+            return "";
+        }
+        char ch = str.charAt(0);
+        if(ch=='e'){
+            return skip(str.substring(1));
+        }else {
+            return ch + skip(str.substring(1));
+        }
+    }
+    
+    public static void main(String[]args){
+        String ip = "Hello";
+        String str = skip(ip);
+        System.out.print(res);
+    }
+}
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+From a given string skip the entire word called hello.
+
+
+
+
 
