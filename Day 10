@@ -1,0 +1,60 @@
+Day 10 :-
+Once the strngs got created , it can't be changed or modified .
+we can't remove  or append or change the place .
+
+code :-
+public class Main
+{
+	public static void main(String[] args) {
+	String a = "Hello";
+	String b = "Hello";
+	
+	String a = new String("Hello");
+	String b = new String("Hello");
+	
+	
+	
+	System.out.println(a==b);    
+	    
+	}
+}
+
+--> == is used to check the address or reference .
+
+public class Main
+{
+	public static void main(String[] args) {
+	String a = "Hello";
+	String b = "Hello";
+	
+// 	String a = new String("Hello");
+// 	String b = new String("Hello");
+	
+	
+	
+	System.out.println(a.equals(b));    
+	    
+	}
+}
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+-length()
+-charAt(int index)
+-substring(int beginIndex, int endIndex)
+-contains(CharSequence s)
+-startWith(String prefix)
+-toUppercase()/toLowercase().
+-trim()
+-replace(String old, String new)
+-Split(String regex)
+-equals(String anotherString).
+
+
+
+
+
+
+
+
+
+
