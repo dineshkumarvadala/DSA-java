@@ -59,7 +59,54 @@ It is an example of recursion.we have only two steps
 taking the values , and not taking the values , whenever you reach base case , you have to print all base case elements .when the the array length = original length that is our base case 
 and in every recursive call remove the last element than it will backtrack.
 
+Dutch National Flag Algorithm: 
 
+Initilize L pointer at 0th index and m pointer at 0th index and h pointer (n-1) index.
+
+the elememnts between m and h are not sorted , so we have to run loop from m to h , if both crosses it means we are reaching each and every element.
+if array of m is zero , swap array of l , after swappinh increase m increase L 
+if array of m = 1 , just move m pointer , 
+if array of m = 1, swap array of m and array of h , after swapping deacrese h.
+now based on above line write the code ?
+
+Code:-
+
+import java.util.Arrays;
+
+public class DutchFlagSort {
+    public static void main(String[] args) {
+        int[] arr = {1, 0, 2, 1, 2, 0, 2, 1};
+        sortColors(arr);
+        System.out.println("Sorted array: " + Arrays.toString(arr));
+    }
+
+    public static void sortColors(int[] arr) {
+        int low = 0;
+        int mid = 0;
+        int high = arr.length - 1;
+
+        while (mid <= high) {
+            if (arr[mid] == 0) {
+                
+                int temp = arr[low];
+                arr[low] = arr[mid];
+                arr[mid] = temp;
+                low++;
+                mid++;
+            } else if (arr[mid] == 1) {
+                mid++; 
+            } else if (arr[mid] == 2) {
+               
+                int temp = arr[mid];
+                arr[mid] = arr[high];
+                arr[high] = temp;
+                high--;
+            }
+        }
+    }
+}
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
 
