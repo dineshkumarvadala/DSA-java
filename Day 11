@@ -12,6 +12,7 @@ rest of the elements are classes
 
 Interface contains incomplete methods 
 classes contains complete methods
+--------------------------------------------------------------------------------------------------------------------------------
 
 LIST : 
 - List contains ordered elements and which can accepts duplicates 
@@ -27,6 +28,7 @@ LIST :
 - last set is a class which is used to store set elements.
 
 - As set is unorder if use treeset , the elements will be order.
+--------------------------------------------------------------------------------------------------------------------------------------
 
 Maps :-
 - Maps contains key value pairs  and to store key value pairs will use hashmap.
@@ -37,14 +39,64 @@ Maps :-
 
 - We can't use simple for loop , we have to use for each loop.
 
-
+------------------------------------------------------------------------------------------------------------------------------------
 
 list<Integer>  list = new ArrayList<> ();
 
 Set<Integer>  st = new Hashset <> ();
 
 map <Integer, Integer> mp =  new Hashmap<>();
-.
+
+------------------------------------------------------------------------------------------------------------------------------------
+
+Kedane's Algorithmn
+
+From the given array we have to find max sum of subarrays.
+eg:- {1,2,3}
+[1],[2].........
+To find maximum sum of subarray for optimal  solution we can use kadane's algorithm
+
+--> Instialize two variables.
+--> One is for individual sums and second variable is for max sum are initialized sum = 0; and other with extrem negative value ;
+--> Run a loop from 0 to N-1 , get the individual values from array and add them.
+--> Our target is get the max sum . if we carry negative values , the overall sum will be reduced so if we get sum less than 0 (sum(0)) restart the sum with 0.
+--> At the end of the loop and return max.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
