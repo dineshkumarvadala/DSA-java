@@ -1,0 +1,19 @@
+Day 12:-
+Majority elememt in a given array :-
+Here, in a array [2,2,1,2,1] ----> 2 is the most repeted Number.
+
+Assume that first element is the target elememnt , 
+we start comparing rest of the elements 
+If we got same element increase the counter else decrease the counter , whenever counter becomes zero , restart the target value of very element of the array
+
+If counter become zero it states that there no mjority elelment and if ccounter greater than 0 , check that target element in our array , count how many times it were repeated 
+and if it is repeated more than n/2 thats my majority elememnt.
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Longest Consecutive elements :-
+int arr[] = {1,2,101,3,103,4,103}
+
+The longest connsecutive element 
+- Push the array elements into set ,
+- As set contain net values using for each loop 
+- Find the starting point .
