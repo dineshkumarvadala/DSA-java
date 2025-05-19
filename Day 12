@@ -17,3 +17,79 @@ The longest connsecutive element
 - Push the array elements into set ,
 - As set contain net values using for each loop 
 - Find the starting point .
+
+Code:-0
+public class Main{
+    public static void main(String args[]){
+        // int arr[] = {1,2,101,3,102,4,103};
+        String ip = "abc";
+        subseq(ip, "");
+    }
+    static void subseq(String ip, String op){
+        if (ip.isEmpty()){
+            System.out.println(op);
+            return;
+        }
+    char ch = ip.charAt(0);
+    subseq(ip.substring(1), op + ch);
+    subseq(ip.substring(1),op);
+    }
+}
+
+Leetcode 1423 :-
+
+class Solution {
+    public int maxScore(int[] cardPoints, int k) {
+        int left=0,right=0;
+for(int i=cardPoints.length-1;i>=cardPoints.length-k;i--) {
+	right+=cardPoints[i];
+}
+int result = right;
+int i=-1;
+int j=cardPoints.length-k-1;
+for(int m=1;m<=k;m++) {
+	i++;j++;
+	left+=cardPoints[i];
+	right-=cardPoints[j];
+	result = Math.max(result, left+right);
+}
+return result;
+    }
+}
+
+
+Sliding window :-
+- we have to use two pointers 
+- Types =  constant window and dynamic window 
+- in Constant window the size is fixed, in dynamic window the window might expaned and sinking. 
+Maximum Points You Can Obtain from Cards..
+
+- Taking 3 values from left
+- 2 left and 1 right 
+- 1 left and 2 right 
+- 3 right 
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------
+Binary Search :-
+
+Condition:- The array should be sorted.
+step 1 :- Initialize to pointer.
+step 2 :- Run the loop , till i and j crosses each other.
+step 3 :- Find the middle value , compare middle value iwth the target , if array middle = target , return mid 
+step 4 :- As element are sorted , if target elelment is greater to array of mid . it means . the element lies in right portion of array no need to check left .
+            so, the right pointer will remain , left will updated to mid +1 , else it might lies in left portion of array. so right pointer need to be updated.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
