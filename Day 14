@@ -1,0 +1,36 @@
+SubArray               Subset                Substring                Subsequence  
+[1,2,3,]               [1,2,3]                "abc"                    "abc"
+[1,2]                   [1,2]                   ab                      ab
+[1,3]                   [1,3]                   ac                      ac
+[2,1]                   [2,1]                   ba                      ba 
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------
+
+SubArray :- 
+Array element should be consecutive.
+
+Subset :-
+Array elements might be continous and might not be continous , it should be a sequence , reverse not possible.
+
+SubString:-
+Its like subaaray, the characters should be continous.
+
+
+Subsequence:-
+Characters might be continous and might not be continous , it should be a sequence , reverse not possible.
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------------
+Sliding window :-
+
+Input: s = "abcabcbb"
+Input: s = "bbbbb"
+
+Step 1 :- intiliaze l and r pointer at 0th index.
+Step 2 :- run the loop r to l-1.
+Step 3 :- Check r characters when inset , if we don't have push the character  into the set use adda method , after pushing the character ,
+Step 4 :- if r character contains in the set , remove l character and move l pointer .
+Step 5 :- Calculate the length , (l -1). 
+
+
