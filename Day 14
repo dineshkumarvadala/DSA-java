@@ -1,3 +1,6 @@
+Day 14 :-  |
+-----------|
+
 SubArray               Subset                Substring                Subsequence  
 [1,2,3,]               [1,2,3]                "abc"                    "abc"
 [1,2]                   [1,2]                   ab                      ab
@@ -32,5 +35,76 @@ Step 2 :- run the loop r to l-1.
 Step 3 :- Check r characters when inset , if we don't have push the character  into the set use adda method , after pushing the character ,
 Step 4 :- if r character contains in the set , remove l character and move l pointer .
 Step 5 :- Calculate the length , (l -1). 
+
+class Solution {
+    public int lengthOfLongestSubstring(String s) {
+         int left = 0;
+        int maxLength = 0;
+        HashSet<Character> charSet = new HashSet<>();
+
+        for (int right = 0; right < s.length(); right++) {
+            while (charSet.contains(s.charAt(right))) {
+                charSet.remove(s.charAt(left));
+                left++;
+            }
+
+            charSet.add(s.charAt(right));
+            maxLength = Math.max(maxLength, right - left + 1);
+        }
+
+        return maxLength;
+    }
+}
+----------------------------------------------------------------------------------------------------------------------------------------------------
+
+Initialize two var : one for counting 1s and another for counting 0 
+
+if array of r = 0 ; increase the counter
+----------------------------------------------------------------------------------------------------------------------------------------------------
+
+Greedy Algorithm :-
+--> n meetings in a row 
+--> Job scheduling 
+--> 0-1 fractional , knapsnack.
+
+
+N meetings in a row:-
+
+input: N=6, start[] = {1,3,0,5,8,5}, end[] = {2,4,5,7,9,9}
+output:1 2 3 4 5 
+
+
+In a room we have conduct max possible meetings from all meetings
+Type 1 : return maximum meanings(just counts)
+Type 2 : return pairs also [ ending time of current meeting is strictly lesser to the starting time of next meeting]
+Type 3 : we have to return all the pairs [ending time of current pairs and starting time of next pairs can be same.
+Type 4 : Duplicate meetings accepted.
+
+
+1.From given arrays, make pairs or triplets.
+2.Do the custom sorting according to the end of time using comparator method.
+3.For sure will take first meeting.
+4.Ending time of current meeting strictly lesser to the starting time of next meeting, if it is atrictly lesser, consider the meeting.
+5.Take some random arrays with staring and ending time , start < less.
+
+
+step 1 : from given arrays,a per kg valued array.
+step 2 : make triplets.
+step 3 : Do the custom sorting based on per kg value.
+
+---------------------------------------------------------------------------------
+Job schduling :-
+The input    :- N= 4, jobs ={(1,4,20), (2,1,10), (3,1,40) , (4,1,30) }
+Output       :- 2 60 
+Explanation  :- the 3rd job with a deadline 1 is performed during the first unit of time . THe second unit of time as its deadline is 4 
+profit = 40 + 20 = 60
+
+
+
+
+
+
+
+
 
 
