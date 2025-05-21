@@ -1,0 +1,101 @@
+    Day 15       |
+-----------------|
+
+
+SubString Algorithms:-
+linear search and binary search :-
+Linear search :-
+To sreach the element in the given array in a linear way.Whenever the  where use  and the time comes it will be bigo (n).
+
+Simple code:-
+
+public class LinearSearchExample {
+    public static int linearSearch(int[] arr, int target) {
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] == target) {
+                return i; // Return the index if found
+            }
+        }
+        return -1; // Return -1 if not found
+    }
+
+    public static void main(String[] args) {
+        int[] numbers = {10, 20, 30, 40, 50};
+        int target = 30;
+        
+        int result = linearSearch(numbers, target);
+        
+        if (result == -1) {
+            System.out.println("Element not found in the array.");
+        } else {
+            System.out.println("Element found at index: " + result);
+        }
+    }
+}
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Binary Search:-
+
+To serach element from the given array in less time complexity.
+The time complexity is BIG O of log N.
+Steps:-
+Step 1 :- Instailize left pointer at , right pointer at n-1.
+Step 2 :- Run a loop left to right , Break the loop left and right .
+Step 3 :- Find the middle value , (left + right /2).
+Step 4 :- If Array mid = target , return mid value.
+Step 5 :- If array of mid is greater than the target value it means element definetly in left half of array.
+Step 6 :- If the element presents in left half ,left half will remain same , right pointer will move to n-1.
+Step 7 :- If array of mid is lesser to the to the target value than the element present in right potion . if element present right half right will reamin same.
+
+Simple code :-
+
+class BinarySearch {
+    public static int search(int[] arr, int key) {
+        int low = 0, high = arr.length - 1;
+        while (low <= high) {
+            int mid = (low + high) / 2;
+            if (arr[mid] == key) return mid;
+            else if (arr[mid] < key) low = mid + 1;
+            else high = mid - 1;
+        }
+        return -1;
+    }
+
+    public static void main(String[] args) {
+        int[] arr = {1, 3, 5, 7, 9};
+        int key = 5;
+        int result = search(arr, key);
+        System.out.println(result);
+    }
+}
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
