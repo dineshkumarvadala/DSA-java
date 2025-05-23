@@ -1,0 +1,173 @@
+Day 17 :- 
+
+Leet code problems
+
+arrays
+1.229
+2.15
+3.56
+4.88
+
+
+binary search 
+1.4
+2.875
+3.162
+4.1011
+
+sliding window
+1.1358
+2.424
+
+
+Leet Code 875 :-
+Koko Eating Bananas :-
+
+
+Koko has several piles of bananas.
+Each pile has a certain number of bananas (given in an array).
+Koko can choose a speed k — the number of bananas she eats per hour.
+
+Every hour:
+She chooses one pile (any one).
+She eats up to k bananas from it.
+If the pile has less than k bananas, she eats the whole pile and rests the remaining time.
+
+The goal is:
+Find the minimum value of k such that Koko finishes all bananas in at most h hours.
+ 
+Code :-
+
+public class KokoEatingBananas {
+
+    public int minEatingSpeed(int[] piles, int h) {
+        int left = 1;
+        int right = getMax(piles);
+        int result = right;
+
+        while (left <= right) {
+            int mid = left + (right - left) / 2;
+            int totalHours = getTotalHours(piles, mid);
+
+            if (totalHours <= h) {
+                result = mid;
+                right = mid - 1; // Try a smaller k
+            } else {
+                left = mid + 1; // Need a larger k
+            }
+        }
+
+        return result;
+    }
+
+    // Helper function to get the maximum pile size
+    private int getMax(int[] piles) {
+        int max = 0;
+        for (int pile : piles) {
+            if (pile > max) {
+                max = pile;
+            }
+        }
+        return max;
+    }
+
+    // Helper function to calculate total hours needed at a certain speed
+    private int getTotalHours(int[] piles, int k) {
+        int hours = 0;
+        for (int pile : piles) {
+            hours += (pile + k - 1) / k; // Same as Math.ceil(pile / k)
+        }
+        return hours;
+    }
+
+    // Example usage
+    public static void main(String[] args) {
+        KokoEatingBananas koko = new KokoEatingBananas();
+
+        System.out.println(koko.minEatingSpeed(new int[]{3, 6, 7, 11}, 8));       // Output: 4
+        System.out.println(koko.minEatingSpeed(new int[]{30, 11, 23, 4, 20}, 5)); // Output: 30
+        System.out.println(koko.minEatingSpeed(new int[]{30, 11, 23, 4, 20}, 6)); // Output: 23
+    }
+}
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Leet code :- 1358
+
+logic ;-
+
+class Solution {
+    public int numberOfSubstrings(String s) {
+        int count = 0;
+        int left = 0;
+        int[] charCount = new int[3];
+
+        for (int right = 0; right < s.length(); right++) {
+            charCount[s.charAt(right) - 'a']++;
+
+            while (charCount[0] > 0 && charCount[1] > 0 && charCount[2] > 0) {
+                count += s.length() - right;
+                charCount[s.charAt(left) - 'a']--;
+                left++;
+            }
+        }
+
+        return count;
+
+    }
+}
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
