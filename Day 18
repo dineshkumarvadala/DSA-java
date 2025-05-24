@@ -155,8 +155,8 @@ class Dog extends Animal {
 
 public class Test {
     public static void main(String[] args) {
-        Animal a = new Dog();  // Upcasting
-        a.sound();  // Calls Dog's sound() at runtime
+        Animal a = new Dog();  
+        a.sound();  
     }
 }
 
@@ -175,9 +175,66 @@ class MathUtils {
     }
 }
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Encapsulation :-
+Encapsulation is the process of wrapping data (variables) and code acting on the data (methods) into a single unit, typically a class.
+It is used to restrict direct access to some of the object's components, which helps protect the integrity of the data.
+
+code :-
+
+public class Student {
+    private String name;  
+    public String getName() {
+        return name;
+    }
+
+    
+    public void setName(String name) {
+        this.name = name;
+    }
+}
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Abstraction :- 
+Abstraction is the process of hiding implementation details and showing only the essential features of an object. 
+It focuses on what an object does instead of how it does it.
+
+code :- 
+abstract class Animal {
+    abstract void makeSound(); 
+}
+
+class Dog extends Animal {
+    void makeSound() {
+        System.out.println("Bark");
+    }
+}
 
 
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+Interface :-
+
+An interface in Java is a collection of abstract methods that define a set of behaviors a class must implement.
+
+Code :- 
+interface Animal {
+    void makeSound();  
+]
+
+class Dog implements Animal {
+    public void makeSound() {
+        System.out.println("Bark");
+    }
+}
+
+class Cat implements Animal {
+    public void makeSound() {
+        System.out.println("Meow");
+    }
+}
+
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
 
