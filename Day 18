@@ -1,0 +1,188 @@
+Day 18 :-
+
+Inheritance :-
+
+There are  3 types of inheritance 
+
+Single inheritence :-
+
+class A{
+    static void method1(){
+        System.out.println("Hello");
+    }
+    int method2(int a, int b){
+        return a+b;
+    }
+}
+
+
+class B extends A{
+    int method3(int a, int b, int c){
+        return a+b+c;
+    }
+}
+
+class Main{
+    public static void main(String[]args){
+        A obj1 = new A();
+        B obj2 = new B();
+        
+        A.method1();
+        
+        int res = obj2.method2(2,3);
+        System.out.println(res);
+        
+    }
+}
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+
+Multi level Inheritance :-
+
+class A{
+    static void method1(){
+        System.out.println("Hello");
+    }
+    int method2(int a, int b){
+        return a+b;
+    }
+}
+
+
+class B extends A{
+    int method3(int a, int b, int c){
+        return a+b+c;
+    }
+}
+
+class C extends B{
+    int method4(int a){
+        return a;
+    }
+}
+
+class Main{
+    public static void main(String[]args){
+        A obj1 = new A();
+        B obj2 = new B();
+        C obj3 = new C();
+        
+        A.method1();
+        
+        int res = obj3.method2(2,3);
+        System.out.println(res);
+        
+    }
+}
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Hierachical inheritance :-
+ class A{
+    static void method1(){
+        System.out.println("Hello");
+    }
+    int method2(int a, int b){
+        return a+b;
+    }
+}
+
+
+class B extends A{
+    int method3(int a, int b, int c){
+        return a+b+c;
+    }
+}
+
+class C extends B{
+    int method4(int a){
+        return a;
+    }
+}
+
+class Main{
+    public static void main(String[]args){
+        A obj1 = new A();
+        B obj2 = new B();
+        C obj3 = new C();
+        
+       A.method1();
+       
+       
+        
+        int res = obj3.method2(2,3);
+        System.out.println(res);
+        
+    }
+}
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+Multiple inritence is not possible in java , 
+
+Because :- 
+
+interface A {
+    void show();
+}
+
+interface B {
+    void show();
+}
+
+class C implements A, B {
+    public void show() {
+        System.out.println("Implemented show");
+    }
+}
+ Reason :- A class cannot inherit from more than one class directly
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Polymorphism :-
+
+Method Overriding :-
+
+Same method name, same parameters, subclass (runtime)
+class Animal {
+    void sound() {
+        System.out.println("Animal makes sound");
+    }
+}
+
+class Dog extends Animal {
+    void sound() {
+        System.out.println("Dog barks");
+    }
+}
+
+public class Test {
+    public static void main(String[] args) {
+        Animal a = new Dog();  // Upcasting
+        a.sound();  // Calls Dog's sound() at runtime
+    }
+}
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Method overloading :-
+
+Same method name, different parameters (compile-time)
+
+class MathUtils {
+    int add(int a, int b) {
+        return a + b;
+    }
+
+    double add(double a, double b) {
+        return a + b;
+    }
+}
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
