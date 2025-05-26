@@ -1,0 +1,207 @@
+Day 19 :-
+
+Data Structures and Algorithms :-
+
+-->Storing the data or Organizing the data or  Arranging data in the memory allocation is called "Data Structure".
+
+-->Step-by-Step procedures to solve problems using that data , is called "Algorithms" .
+---------------------------------------------------------------------------------------------------------------------------------------------------------------
+Array:-
+A fixed-size collection of elements of the same type stored in contiguous memory.
+
+Efficient access using index; useful when the size is known and rarely changes.
+
+code :-
+int[] arr = new int[5];  
+arr[0] = 10;
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+ArrayList:-
+A resizable array implementation of the List interface in Java. It grows as needed.
+
+When you need dynamic resizing and frequent access via index.
+
+Code:-
+ArrayList<String> list = new ArrayList<>();
+list.add("apple");
+list.add("banana");
+System.out.println(list.get(1)); // Output: banana
+---------------------------------------------------------------------------------------------------------------------------------------------------------
+LinkedList :-
+Definition: A linear data structure where each element (node) points to the next, allowing efficient insertions/deletions.
+
+Use Case: When frequent insertions and deletions are required.
+
+
+LinkedList<Integer> list = new LinkedList<>();
+list.add(1); list.add(2); list.addFirst(0);
+System.out.println(list); // [0, 1, 2]
+---------------------------------------------------------------------------------------------------------------------------------------
+1.4 Stack
+Definition: A Last-In-First-Out (LIFO) data structure.
+
+Use Case: Undo operations, parsing expressions, recursive programming.
+
+
+Stack<Integer> stack = new Stack<>();
+stack.push(10);
+stack.push(20);
+System.out.println(stack.pop()); // 20
+-------------------------------------------------------------------------------------------------------------------------------------------------
+1.5 Queue
+Definition: A First-In-First-Out (FIFO) data structure.
+
+Use Case: Task scheduling, printer queue, BFS traversal.
+
+
+Queue<Integer> queue = new LinkedList<>();
+queue.add(1); queue.add(2);
+System.out.println(queue.poll()); // 1
+--------------------------------------------------------------------------------------------------------------------------------------------------
+1.6 HashMap
+Definition: A key-value pair data structure that allows fast access using keys.
+
+Use Case: Lookups, dictionaries, caches.
+
+
+HashMap<String, Integer> map = new HashMap<>();
+map.put("apple", 1);
+System.out.println(map.get("apple")); // 1
+---------------------------------------------------------------------------------------------------------------------------------------------
+1.7 HashSet
+Definition: A set data structure that does not allow duplicates and has fast access.
+
+Use Case: Checking for uniqueness, removing duplicates.
+
+HashSet<Integer> set = new HashSet<>();
+set.add(1); set.add(2); set.add(2);
+System.out.println(set); // [1, 2]
+
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+⚙️ 2. ALGORITHMS
+2.1 Bubble Sort
+Definition: A simple sorting algorithm that repeatedly steps through the list, compares adjacent elements and swaps them.
+
+Time Complexity: O(n²)
+
+
+public static void bubbleSort(int[] arr) {
+    int n = arr.length;
+    for (int i = 0; i < n - 1; i++)
+        for (int j = 0; j < n - i - 1; j++)
+            if (arr[j] > arr[j + 1]) {
+                int temp = arr[j];
+                arr[j] = arr[j + 1];
+                arr[j + 1] = temp;
+            }
+}
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2.2 Quick Sort
+Definition: A divide-and-conquer algorithm that picks a pivot and partitions the array.
+
+Time Complexity: Average O(n log n), Worst O(n²)
+
+
+public static void quickSort(int[] arr, int low, int high) {
+    if (low < high) {
+        int pi = partition(arr, low, high);
+        quickSort(arr, low, pi - 1);
+        quickSort(arr, pi + 1, high);
+    }
+}
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+2.3 Binary Search
+Definition: Searches a sorted array by repeatedly dividing the search interval in half.
+
+Time Complexity: O(log n)
+
+
+public static int binarySearch(int[] arr, int target) {
+    int left = 0, right = arr.length - 1;
+    while (left <= right) {
+        int mid = (left + right) / 2;
+        if (arr[mid] == target) return mid;
+        else if (arr[mid] < target) left = mid + 1;
+        else right = mid - 1;
+    }
+    return -1;
+}
+---------------------------------------------------------------------------------------------------------------------------------------------------------
+2.4 Factorial (Recursion)
+Definition: Calculates n! = n × (n - 1) × ... × 1 using recursion.
+
+
+public static int factorial(int n) {
+    if (n == 0) return 1;
+    return n * factorial(n - 1);
+}
+
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+🌲 3. Tree Data Structure
+Binary Tree
+Definition: A tree where each node has at most two children.
+
+Use Case: Hierarchical data (e.g., file system), searching, sorting.
+
+
+class Node {
+    int value;
+    Node left, right;
+
+    Node(int value) {
+        this.value = value;
+        left = right = null;
+    }
+}
+
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+🔗 4. Graph Data Structure
+Adjacency List
+Definition: A way to represent a graph using a list where each node stores its adjacent vertices.
+
+Use Case: Efficient for sparse graphs.
+
+class Graph {
+    Map<Integer, List<Integer>> adj = new HashMap<>();
+
+    void addEdge(int src, int dest) {
+        adj.putIfAbsent(src, new ArrayList<>());
+        adj.get(src).add(dest);
+    }
+}
+
+-----------------------------------------------------------------------------------------------------------------------------------------
+
+Time complexity and Space Complexity :-
+
+
+Time complexity :-
+-> Ignore Constants
+-> Ignore Small values
+-> Focus on Worst case
+
+
+Space Complexity :-
+The extra space we are using to solve the problem is called Space complexity.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
