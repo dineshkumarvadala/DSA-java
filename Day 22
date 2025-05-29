@@ -1,0 +1,145 @@
+Day 22 :-
+
+🔢 Code 1: Factorial Calculation and Adjustment
+java
+Copy
+Edit
+static int factorial(int n) {
+    int f = 1;
+    for (int i = 1; i <= n; i++) f *= i;
+    return f;
+}
+
+public static void main(String[] args) {
+    int answer = factorial(4) - 7; 
+    ArrayList<Integer> output = new ArrayList<>();
+    output.add(answer);
+    System.out.println(output); 
+}
+🔍 Explanation:
+Purpose: Calculate the factorial of 4 and subtract 7 from it.
+
+Function factorial(int n):
+
+Computes n! (n factorial), which is the product of all integers from 1 to n.
+
+For example, 4! = 4 × 3 × 2 × 1 = 24.
+
+In main method:
+
+Calls factorial(4) → returns 24
+
+Subtracts 7 → 24 - 7 = 17
+
+Stores result in a list and prints it
+
+✅ Output: [17]
+
+🔍 Code 2: Prime Number Count
+java
+Copy
+Edit
+static boolean isPrime(int n) {
+    if (n <= 1) return false;
+    for (int i = 2; i * i <= n; i++) {
+        if (n % i == 0) return false;
+    }
+    return true;
+}
+
+static int countPrimes(int limit) {
+    int count = 0;
+    for (int i = 1; i <= limit; i++) {
+        if (isPrime(i)) count++;
+    }
+    return count;
+}
+🔍 Explanation:
+Purpose: Count how many prime numbers are less than or equal to 41.
+
+Function isPrime(int n):
+
+Returns true if n is a prime number.
+
+Checks divisibility up to √n.
+
+Function countPrimes(int limit):
+
+Loops through all numbers from 1 to limit (inclusive)
+
+Uses isPrime() to check if each number is prime
+
+Increments the count for each prime number
+
+Main method: Calls countPrimes(41).
+
+✅ Output: [13]
+(Because there are 13 prime numbers ≤ 41)
+
+✏️ Code 3: Count Non-Space Characters
+java
+Copy
+Edit
+static int countCharsNoSpaces(String s) {
+    int count = 0;
+    for (char c : s.toCharArray()) {
+        if (c != ' ') count++;
+    }
+    return count;
+}
+
+public static void main(String[] args) {
+    String str = "Java programming fun"; 
+    int answer = countCharsNoSpaces(str);
+    ArrayList<Integer> output = new ArrayList<>();
+    output.add(answer);
+    System.out.println(output); 
+}
+🔍 Explanation:
+Purpose: Count how many characters are in the string excluding spaces.
+
+Function countCharsNoSpaces(String s):
+
+Converts the string to a char array
+
+Counts each character that is not a space (' ')
+
+"Java programming fun" → total chars = 20, spaces = 2 → 20 - 2 = 18
+
+✅ Output: [18]
+
+➕ Code 4: Sum of First N Odd Numbers
+java
+Copy
+Edit
+static int sumFirstNOdd(int n) {
+    int sum = 0, count = 0, num = 1;
+    while (count < n) {
+        sum += num;
+        num += 2;
+        count++;
+    }
+    return sum;
+}
+
+public static void main(String[] args) {
+    int answer = sumFirstNOdd(6); 
+    ArrayList<Integer> output = new ArrayList<>();
+    output.add(answer);
+    System.out.println(output); 
+}
+🔍 Explanation:
+Purpose: Calculate the sum of the first n odd numbers.
+
+Function sumFirstNOdd(int n):
+
+Uses a loop to generate and add odd numbers: 1, 3, 5, ...
+
+Stops when it has added n odd numbers
+
+For n = 6: 1 + 3 + 5 + 7 + 9 + 11 = 36
+
+✅ Output: [36]
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------
