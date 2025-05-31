@@ -1,0 +1,11 @@
+Day 23 :-
+
+STACKs : 
+Its follows last in first out 
+its comes under Linear data structures 
+
+Operations : push , pop , peek isEmpty , display , size .
+
+These are the most 
+
+Stack are used to get the output in constant time which is Big (O)1.
