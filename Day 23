@@ -9,6 +9,76 @@ Operations : push , pop , peek isEmpty , display , size .
 These are the most 
 
 Stack are used to get the output in constant time which is Big (O)1.
+
+Code:-
+
+import java.util.*;
+
+class Main {
+    static int push(int[] arr, int top, int ele) {
+        if (top < arr.length - 1) {
+            top = top + 1;
+            arr[top] = ele;
+        } else {
+            System.out.println("Stack is full..!");
+        }
+        return top;
+    }
+
+    static int pop(int[] arr, int top) {
+        if (top > -1) {
+            System.out.println("Popped: " + arr[top]);
+            top = top - 1;
+        } else {
+            System.out.println("Stack is empty..!");
+        }
+        return top;
+    }
+
+    static void peek(int[] arr, int top) {
+        if (top == -1) {
+            System.out.println("Stack is empty..!");
+        } else {
+            System.out.println("Top element: " + arr[top]);
+        }
+    }
+
+    static boolean isEmpty(int top) {
+        return top == -1;
+    }
+
+    static int size(int top) {
+        return top + 1;
+    }
+
+    static void display(int[] arr, int top) {
+        if (top == -1) {
+            System.out.println("Stack is empty..!");
+        } else {
+            System.out.print("Stack elements: ");
+            for (int i = 0; i <= top; i++) {
+                System.out.print(arr[i] + " ");
+            }
+            System.out.println();
+        }
+    }
+
+    public static void main(String[] args) {
+        int[] arr = new int[5];
+        int top = -1;
+
+        top = push(arr, top, 1);
+        top = push(arr, top, 2);
+        top = push(arr, top, 3);
+        top = pop(arr, top);
+        peek(arr, top);
+        System.out.println("Size: " + size(top));
+        System.out.println("Is Empty? " + isEmpty(top));
+        display(arr, top);
+    }
+}
+
+Final draft of the code for stacks ...
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Sorting:-
@@ -60,17 +130,65 @@ class Main {
     }
 }
 
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+Queue :-
 
+-->A Queue is a data structure that follows the FIFO (First In, First Out) principle.
 
+-->The first element added to the queue will be the first one to be removed.
 
+-->Think of it like a line of people waiting — the person who comes first is served first.
 
+-->Queue Interface in Java
+-->Java provides a Queue interface in the java.util package, which extends the Collection interface. It represents a collection designed for holding elements prior to processing.
 
+-->Common Operations on Queue
+Operation	Description
+offer(E e)	Adds an element to the end of the queue
+poll()	Retrieves and removes the head (first element) or returns null if empty
+peek()	Retrieves but does not remove the head, returns null if empty
+add(E e)	Adds an element to the queue, throws exception if full
+remove()	Retrieves and removes the head, throws exception if empty
 
+Implementations of Queue in Java
+Some common classes that implement the Queue interface:
 
+LinkedList — a doubly linked list implementation, commonly used as a queue.
 
+PriorityQueue — elements are ordered based on their priority, not FIFO.
 
+ArrayDeque — resizable-array implementation of a deque (double-ended queue), also commonly used as a queue.
 
+Example: Using Queue with LinkedList
 
+import java.util.Queue;
+import java.util.LinkedList;
 
+public class QueueExample {
+    public static void main(String[] args) {
+        Queue<String> queue = new LinkedList<>();
+
+        // Adding elements to the queue
+        queue.offer("Apple");
+        queue.offer("Banana");
+        queue.offer("Cherry");
+
+        System.out.println("Queue: " + queue);
+
+        // Accessing the head element without removing
+        System.out.println("Head of queue: " + queue.peek());
+
+        // Removing elements from the queue
+        System.out.println("Removed from queue: " + queue.poll());
+        System.out.println("Queue after removal: " + queue);
+
+        // Remove all elements
+        while (!queue.isEmpty()) {
+            System.out.println("Removing: " + queue.poll());
+        }
+
+        System.out.println("Queue empty? " + queue.isEmpty());
+    }
+}
 
