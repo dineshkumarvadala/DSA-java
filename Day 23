@@ -9,3 +9,68 @@ Operations : push , pop , peek isEmpty , display , size .
 These are the most 
 
 Stack are used to get the output in constant time which is Big (O)1.
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Sorting:-
+
+Sorting algorithmns are used to make the sorted data either ascending or descending.
+Sorting algo is used to convert unsorted which helps to get faster output.
+There are main  Algorithmns:-
+-> Bubble Sort
+-> Selection Sort
+-> Insertion Sort
+-> Merge Sort
+-> Quick Sort
+-> Count Sort
+-> Heap Sort
+-> Radix Sort
+
+
+Bubble Sort:-
+
+Selecting the adjacent elements, comparing those elements and swapping.
+After completion of every iteration the weightest will go to nth play.
+
+Code:-
+import java.util.Arrays;
+
+class Main {
+    public static void main(String[] args) {
+        int[] arr = {5, 3, 1, 4, 2};
+        bubbleSort(arr); // Sort the array
+        System.out.println("Sorted Array: " + Arrays.toString(arr));
+    }
+
+    // Bubble Sort Function
+    public static void bubbleSort(int[] arr) {
+        for (int i = 0; i < arr.length - 1; i++) {
+            for (int j = 0; j < arr.length - i - 1; j++) {
+                if (arr[j] > arr[j + 1]) {
+                    swap(arr, j, j + 1); // Call swap function
+                }
+            }
+        }
+    }
+
+    // Swap Function
+    public static void swap(int[] arr, int i, int j) {
+        int temp = arr[i];
+        arr[i] = arr[j];
+        arr[j] = temp;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
